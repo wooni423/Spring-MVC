@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.jiwoong.springex.mapper.TodoMapperTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-06-05T23:49:42" hostname="DESKTOP-N6NE9Q6" time="0.275">
+  <properties/>
+  <testcase name="testSelectSearch()" classname="com.jiwoong.springex.mapper.TodoMapperTests" time="0.275"/>
+  <system-out><![CDATA[08:49:41  INFO [org.springframework.test.context.support.DefaultTestContextBootstrapper] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+08:49:41  INFO [org.springframework.test.context.support.DefaultTestContextBootstrapper] Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@710d7aff, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@2d7e1102, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@65327f5, org.springframework.test.context.support.DirtiesContextTestExecutionListener@2adddc06, org.springframework.test.context.transaction.TransactionalTestExecutionListener@301d8120, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@6d367020, org.springframework.test.context.event.EventPublishingTestExecutionListener@72458efc]
+08:49:41  INFO [com.zaxxer.hikari.HikariDataSource] HikariPool-1 - Starting...
+08:49:41  WARN [com.zaxxer.hikari.util.DriverDataSource] Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+08:49:41  INFO [com.zaxxer.hikari.pool.HikariPool] HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@26350ea2
+08:49:41  INFO [com.zaxxer.hikari.HikariDataSource] HikariPool-1 - Start completed.
+08:49:42 DEBUG [com.jiwoong.springex.mapper.TodoMapper.selectList] ==>  Preparing: SELECT * FROM ( SELECT /*+ INDEX_DESC(TBL_TODO TODO_PK) */ rownum rn, tno,title,writer,dueDate,finished from tbl_todo where rownum <= ? * ? and title like '%'|| ? ||'%' and dueDate between ? and ? ) where rn > (? - 1) * ?
+08:49:42 DEBUG [com.jiwoong.springex.mapper.TodoMapper.selectList] ==> Parameters: 1(Integer), 10(Integer), 수정(String), 2023-06-01(LocalDate), 2023-06-07(LocalDate), 1(Integer), 10(Integer)
+08:49:42 TRACE [com.jiwoong.springex.mapper.TodoMapper.selectList] <==    Columns: RN, TNO, TITLE, WRITER, DUEDATE, FINISHED
+08:49:42 TRACE [com.jiwoong.springex.mapper.TodoMapper.selectList] <==        Row: 1, 2050, 2050 수정 test, user00, 2023-06-06 00:00:00, 0
+08:49:42 DEBUG [com.jiwoong.springex.mapper.TodoMapper.selectList] <==      Total: 1
+08:49:42  INFO [com.jiwoong.springex.mapper.TodoMapperTests] TodoVO(tno=2050, title=2050 수정 test, dueDate=2023-06-06, writer=user00, finished=false)
+08:49:42 DEBUG [com.jiwoong.springex.mapper.TodoMapper.getTotal] ==>  Preparing: select count(*) from tbl_todo WHERE title like '%'|| ? ||'%' and dueDate between ? and ?
+08:49:42 DEBUG [com.jiwoong.springex.mapper.TodoMapper.getTotal] ==> Parameters: 수정(String), 2023-06-01(LocalDate), 2023-06-07(LocalDate)
+08:49:42 TRACE [com.jiwoong.springex.mapper.TodoMapper.getTotal] <==    Columns: COUNT(*)
+08:49:42 TRACE [com.jiwoong.springex.mapper.TodoMapper.getTotal] <==        Row: 1
+08:49:42 DEBUG [com.jiwoong.springex.mapper.TodoMapper.getTotal] <==      Total: 1
+08:49:42  INFO [com.jiwoong.springex.mapper.TodoMapperTests] 1
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
